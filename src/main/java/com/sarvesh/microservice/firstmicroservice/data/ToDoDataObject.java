@@ -1,17 +1,23 @@
 package com.sarvesh.microservice.firstmicroservice.data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity(name = "todo")
 public class ToDoDataObject {
 
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String task;
 	private Date targetDate;
-	
+
 	public ToDoDataObject() {
 		super();
 	}
-	
+
 	public ToDoDataObject(Long id,  String task, Date targetDate, boolean done) {
 		super();
 		this.id = id;
@@ -20,14 +26,13 @@ public class ToDoDataObject {
 		this.done = done;
 	}
 	private  boolean done;
-	
+
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
 	public String getTask() {
 		return task;
 	}
@@ -68,8 +73,8 @@ public class ToDoDataObject {
 			return false;
 		return true;
 	}
-	
-	
-	
+
+
+
 }
 
